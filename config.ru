@@ -1,4 +1,4 @@
-require 'app2'
+require 'app'
 
 
  

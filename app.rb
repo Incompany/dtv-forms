@@ -12,8 +12,8 @@ require 'pony'
     :address              => 'smtp.gmail.com',
     :port                 => '587',
     :enable_starttls_auto => true,
-    :user_name            => 'admin@incompanysolutions.com',
-    :password             => 'company1',
+    :user_name            => '',
+    :password             => '',
     :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
     :domain               => "localhost.localdomain" # the HELO domain provided by the client to the server
   })
@@ -50,7 +50,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     '', ''
    
    
      			cliente = [
@@ -98,7 +98,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     '', ''
    
      			cliente = [
                     :type,      'Candidato__c',
@@ -144,7 +144,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     ' ', '  '
    
      			cliente = [
                     :type,      'Candidato__c',
@@ -190,7 +190,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     ' ', '  '
    
      			cliente = [
                     :type,      'Candidato__c',
@@ -237,7 +237,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     ' ', '  '
    
      			cliente = [
                     :type,      'Candidato__c',
@@ -282,7 +282,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     ' ', '  '
    
      			cliente = [
                     :type,      'Candidato__c',
@@ -329,7 +329,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     ' ', '  '
    
      			cliente = [
                     :type,      'Candidato__c',
@@ -374,7 +374,7 @@ require 'pony'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'admin@afd.co.cr', 'company126R3uFcxJl0oFu5jS8xTrkOkR'
+     ' ', '  '
    
      			cliente = [
                     :type,      'Candidato__c',
