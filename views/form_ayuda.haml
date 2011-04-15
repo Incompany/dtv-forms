@@ -1,0 +1,40 @@
+%form{ :action => "", :method => "post"}
+  %fieldset
+    %ol
+      %li
+        %label{:for => "name"} Nombre Completo:
+        %input{:type => "text", :name => "name", :class => "text"}
+      %li
+        %label{:for => "email"} Email:
+        %input{:type => "text", :name => "email", :class => "text"}
+      %li
+        %label{:for => "phone"} Teléfono:
+        %input{:type => "text", :name => "phone", :class => "text"}
+      %li
+        %tr
+          %td
+            %label{:for => "menu_ayuda"} Motivo de Consulta:
+            %select{:name => "menu_ayuda", :id => "0001", :class => "dropdown"}
+              %option{:value => " "} -- Por favor seleccione --            
+              %option{:value => "Programacion del Canal"} Programacion del Canal
+              %option{:value => "Compra de paquetes"} Compra de paquetes
+              %option{:value => "Pauta en Canal"} Pauta en el Canal
+              %option{:value => "Otros"} Otros
+      %li
+        %tr
+          %td
+            %label{:for => "menu_medio"} Por cual medio quiere ser contactado:
+            %select{:name => "menu_medio", :id => "0001", :class => "dropdown"}
+              %option{:value => " "} -- Por favor seleccione --            
+              %option{:value => "Telefono"} Telefono
+              %option{:value => "CorreoElectronico"} Correo Electrónico
+      %li
+        %label{:for => "coment"} Comentarios:
+        %textarea{:name => "coment"}              
+      %li
+        %tr
+          %td
+            %label{:for => "amigo"} Suscribirse a amigo destinos:
+            %input{:type => "checkbox", :name => "amigo", :class => "checkbox"}
+    %input{:type => "submit", :value => "Send", :class => "button"}
+

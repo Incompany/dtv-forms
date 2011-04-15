@@ -23,51 +23,47 @@ require 'pony'
 
 
 
-  get '/afdcr-en' do
+  get '/ayuda' do
 
-        haml :contact
+        haml :form_ayuda
     end
     
     
-	post '/afdcr-en' do
+	post '/ayuda' do
 		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
+		      name = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
-		      aux = params[:aux]
+		      menu_medio = params[:menu_medio]
+		      coment = params[:coment]
+		      amigo = params[:amigo]
+		      menu_motivo = params[:menu_motivo]
 		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
+		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
+     'https://www.test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
      '', ''
    
    
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
+     			contacto = [
+                    :type,      'Contacto__c',
+                    :name,      "#{fname}",
+                    :NombreCompleto__c,      "#{fname}",
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AFD Costa Rica",
-                    :Idioma__c, "Ingles",
-                    :Origen__c, "Web"
+                    :MedioContacto__c,      "#{menu_medio}",
+                    :Comentarios__c, "#{coment}",
+                    :SuscribirAmigoDestinos__c, "#{amigo}",
+                    :Formulario__c, "Ayuda",
+                    :MotivoConsulta__c, "#{menu_motivo}"
                    ]
 
-     			binding.create :sObject => cliente		      
+     			binding.create :sObject => contacto		      
 					
-		      haml :red1
+		      haml :form_ayuda
 		  end
 
 
