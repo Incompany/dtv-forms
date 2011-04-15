@@ -45,7 +45,7 @@ require 'pony'
      'https://www.test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     '', ''
+     'salesforce@destinostv.com.test', 'company1'
    
    
      			contacto = [
