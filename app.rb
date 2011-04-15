@@ -1,27 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 require 'rforce'
-require 'pony'
-#afd cr
-
-	def enviar_correo()
-	
-	body = "error al acceder al salesforce ocurrido en la fecha: " + String(Time.now) + " desde la ip: " + String(request.env['REMOTE_ADDR'].split(',').first)
-	
-	 	Pony.mail(:to => 'admin@incompanysolutions.com',  :subject => "error en acceso a Salesforce", :body => "#{body}", :via => :smtp, :via_options => {
-    :address              => 'smtp.gmail.com',
-    :port                 => '587',
-    :enable_starttls_auto => true,
-    :user_name            => '',
-    :password             => '',
-    :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
-    :domain               => "localhost.localdomain" # the HELO domain provided by the client to the server
-  })
-		haml :red3
-	
-	end
 
 
+#forms de destinos tv
 
   get '/ayuda' do
 
@@ -45,7 +27,7 @@ require 'pony'
      'https://www.test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'salesforce@destinostv.com.test', 'company1'
+     'user', 'password'
    
    
      			contacto = [
@@ -67,324 +49,178 @@ require 'pony'
 		  end
 
 
-  get '/afdcr-es' do
+  get '/amigo' do
 
-        haml :contact
+        haml :form_amigo
     end
     
     
-	post '/afdcr-es' do
+	post '/amigo' do
 		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
+		      name = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
-		      aux = params[:aux]
+		      pais = params[:pais]
+		      ciudad = params[:ciudad]
+		      amigo = params[:amigo]
+		      fecha = params[:fecha]
 		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
+		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
+     'https://www.test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     '', ''
+     'user', 'password'
    
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
+   
+     			contacto = [
+                    :type,      'Contacto__c',
+                    :name,      "#{fname}",
+                    :NombreCompleto__c,      "#{fname}",
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AFD Costa Rica",
-                    :Idioma__c, "Español",
-                    :Origen__c, "Web"
+                    :SuscribirAmigoDestinos__c, "#{amigo}",
+                    :Formulario__c, "Ayuda",
+                    :FechaNacimiento__c, "#{fecha}",
+                    :Ciudad__c, "#{ciudad}",
+                    :Pais__c, "#{pais}"
                    ]
 
-     			binding.create :sObject => cliente		      
+     			binding.create :sObject => contacto		      
 					
-		      haml :red1
+		      haml :form_amigo
 		  end
-		#AFD nic
-    get '/afdni-en' do
 
-        haml :contact
+  get '/paq_email' do
+
+        haml :form_paq_email
     end
     
     
-		post '/afdni-en' do
+	post '/paq_email' do
 		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
+		      name = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
-		      aux = params[:aux]
+		      cant_ninos = params[:cant_ninos]
+		      cant_adultos = params[:cant_adultos]
+		      amigo = params[:amigo]
+		      fecha = params[:fecha]
 		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
+		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
+     'https://www.test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     ' ', '  '
+     'user', 'password'
    
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
+   
+     			contacto = [
+                    :type,      'Contacto__c',
+                    :name,      "#{fname}",
+                    :NombreCompleto__c,      "#{fname}",
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AFD Nicaragua",
-                    :Idioma__c, "Ingles",
-                    :Origen__c, "Web"
+                    :CantidadAdultos__c, "#{cant_adultos}",
+                    :CantidadNinos__c, "#{cant_ninos}",
+                    :SuscribirAmigoDestinos__c, "#{amigo}",
+                    :Formulario__c, "PaqueteEmail",
+                    :MedioContacto__c, "CorreoElectronico"
                    ]
 
-     			binding.create :sObject => cliente		      
-
-		      haml :red1
+     			binding.create :sObject => contacto		      
+					
+		      haml :form_paq_email
 		  end
 
-    get '/afdni-es' do
 
-        haml :contact
+  get '/paq_tel' do
+
+        haml :form_paq_tel
     end
     
     
-		post '/afdni-es' do
+	post '/paq_tel' do
 		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
+		      name = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
-		      aux = params[:aux]
+		      cant_ninos = params[:cant_ninos]
+		      cant_adultos = params[:cant_adultos]
+		      amigo = params[:amigo]
+		      fecha = params[:fecha]
 		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
+		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
+     'https://www.test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     ' ', '  '
+     'user', 'password'
    
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
+   
+     			contacto = [
+                    :type,      'Contacto__c',
+                    :name,      "#{fname}",
+                    :NombreCompleto__c,      "#{fname}",
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AFD Nicaragua",
-                    :Idioma__c, "Español",
-                    :Origen__c, "Web"
+                    :CantidadAdultos__c, "#{cant_adultos}",
+                    :CantidadNinos__c, "#{cant_ninos}",
+                    :SuscribirAmigoDestinos__c, "#{amigo}",
+                    :Formulario__c, "PaqueteEmail",
+                    :MedioContacto__c, "Telefono"
                    ]
 
-     			binding.create :sObject => cliente		      
-
-		      haml :red1
+     			binding.create :sObject => contacto		      
+					
+		      haml :form_paq_tel
 		  end
 
-		  #AFD Panamá
-    get '/afdpa-en' do
 
-        haml :contact
+  get '/contacto' do
+
+        haml :form_contacto
     end
     
     
-		post '/afdpa-en' do
+	post '/contacto' do
 		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
+		      name = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
-		      aux = params[:aux]
+		      menu_medio = params[:menu_medio]
+		      coment = params[:coment]
+		      amigo = params[:amigo]
+		      menu_motivo = params[:menu_motivo]
 		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
+		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
+     'https://www.test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     ' ', '  '
+     'user', 'password'
    
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
+   
+     			contacto = [
+                    :type,      'Contacto__c',
+                    :name,      "#{fname}",
+                    :NombreCompleto__c,      "#{fname}",
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AFD Panamá",
-                    :Idioma__c, "Ingles",
-                    :Origen__c, "Web"
+                    :MedioContacto__c,      "#{menu_medio}",
+                    :Comentarios__c, "#{coment}",
+                    :SuscribirAmigoDestinos__c, "#{amigo}",
+                    :Formulario__c, "Ayuda",
+                    :MotivoConsulta__c, "#{menu_motivo}"
                    ]
 
-     			binding.create :sObject => cliente		      
-					#puts binding.inspect
-		      haml :red1
+     			binding.create :sObject => contacto		      
+					
+		      haml :form_contacto
 		  end
-    get '/afdpa-es' do
 
-        haml :contact
-    end
-    
-    
-		post '/afdpa-es' do
-		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
-		      email= params[:email]
-		      phone = params[:phone]
-		      aux = params[:aux]
-		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
-		      
-				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
 
-   				binding.login \
-     ' ', '  '
-   
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
-                    :CorreoElectronico__c,      "#{email}",
-                    :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AFD Panamá",
-                    :Idioma__c, "Español",
-                    :Origen__c, "Web"
-                   ]
-
-     			binding.create :sObject => cliente		      
-
-		      haml :red1
-		  end
-		  
-		  
-    get '/altercr-en' do
-
-        haml :contact
-    end
-    #alternativa cr
-    
-		post '/altercr-en' do
-		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
-		      email= params[:email]
-		      phone = params[:phone]
-		      aux = params[:aux]
-		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
-		      
-				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
-
-   				binding.login \
-     ' ', '  '
-   
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
-                    :CorreoElectronico__c,      "#{email}",
-                    :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AlternativaCR",
-                    :Idioma__c, "Ingles",
-                    :Origen__c, "Web"
-                   ]
-
-     			binding.create :sObject => cliente		      
-
-		      haml :red2
-		  end
-    get '/altercr-es' do
-
-        haml :contact
-    end
-    #alternativa cr
-    
-		post '/altercr-es' do
-		     # name = params[:name]
-		      name = params[:name]
-		      lname = params[:lname]
-		      email= params[:email]
-		      phone = params[:phone]
-		      aux = params[:aux]
-		      
-		      
-		      
-		      puts "nombre:" + "#{name}"
-		      puts "apellido:" + "#{lname}"
-		      puts "email:" + "#{email}"
-		      puts "telefono:" + "#{phone}"
-		      puts "aux:" + "#{aux}"
-		      
-		      
-				  binding = RForce::Binding.new \
-     'https://www.salesforce.com/services/Soap/u/20.0'
-
-   				binding.login \
-     ' ', '  '
-   
-     			cliente = [
-                    :type,      'Candidato__c',
-                    :name,      "#{name}",
-                    :Apellidos__c,      "#{lname}",
-                    :CorreoElectronico__c,      "#{email}",
-                    :Telefono__c,      "#{phone}",
-                    :Descripcion__c,      "#{aux}",
-                    :Pertenece__c, "AlternativaCR",
-                    :Idioma__c, "Español",
-                    :Origen__c, "Web"
-                   ]
-
-     			binding.create :sObject => cliente		      
-
-		      haml :red2
-		  end

@@ -1,0 +1,28 @@
+%form{ :action => "", :method => "post"}
+  %fieldset
+    %ol
+      %li
+        %label{:for => "name"} Nombre Completo:
+        %input{:type => "text", :name => "name", :class => "text"}
+      %li
+        %label{:for => "email"} Email:
+        %input{:type => "text", :name => "email", :class => "text"}
+      %li
+        %label{:for => "phone"} Telefono:
+        %input{:type => "text", :name => "phone", :class => "text"}
+      %li
+        %label{:for => "pais"} Pais:
+        %input{:type => "text", :name => "pais", :class => "text"}
+      %li
+        %label{:for => "ciudad"} Ciudad:
+        %input{:type => "text", :name => "ciudad", :class => "text"}
+      %li
+        %label{:for => "fecha"} fecha de nacimiento:
+        %input{:type => "date", :name => "fecha", :class => "date"}            
+      %li
+        %tr
+          %td
+            %label{:for => "amigo"} Suscribirse a amigo destinos:
+            %input{:type => "checkbox", :name => "amigo", :class => "checkbox"}
+    %input{:type => "submit", :value => "Send", :class => "button"}
+
