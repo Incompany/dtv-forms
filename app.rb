@@ -76,7 +76,7 @@ require 'rforce'
    
      			contacto = [
                     :type,      'Contacto__c',
-                    :fname,      "#{fname}",
+                    :name,      "#{fname}",
                     :NombreCompleto__c,      "#{fname}",
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
