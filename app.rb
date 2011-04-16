@@ -24,10 +24,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/20.0'
+     'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com', 'company1'
    
    
      			contacto = [
@@ -68,10 +68,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/20.0'
+     'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com', 'company1'
    
    
      			contacto = [
@@ -81,7 +81,7 @@ require 'rforce'
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
                     :SuscribirAmigoDestinos__c, "#{amigo}",
-                    :Formulario__c, "Ayuda",
+                    :Formulario__c, "Amigo",
                     :FechaNacimiento__c, "#{fecha}",
                     :Ciudad__c, "#{ciudad}",
                     :Pais__c, "#{pais}"
@@ -111,10 +111,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/20.0'
+     'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com', 'company1'
    
    
      			contacto = [
@@ -155,10 +155,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/20.0'
+     'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com', 'company1'
    
    
      			contacto = [
@@ -170,7 +170,7 @@ require 'rforce'
                     :CantidadAdultos__c, "#{cant_adultos}",
                     :CantidadNinos__c, "#{cant_ninos}",
                     :SuscribirAmigoDestinos__c, "#{amigo}",
-                    :Formulario__c, "PaqueteEmail",
+                    :Formulario__c, "PaqueteTel",
                     :MedioContacto__c, "Telefono"
                    ]
 
@@ -199,10 +199,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/20.0'
+     'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com', 'company1'
    
    
      			contacto = [
@@ -214,7 +214,7 @@ require 'rforce'
                     :MedioContacto__c,      "#{menu_medio}",
                     :Comentarios__c, "#{coment}",
                     :SuscribirAmigoDestinos__c, "#{amigo}",
-                    :Formulario__c, "Ayuda",
+                    :Formulario__c, "Contacto",
                     :MotivoConsulta__c, "#{menu_motivo}"
                    ]
 
