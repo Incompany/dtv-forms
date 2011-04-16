@@ -45,7 +45,7 @@ require 'rforce'
 
      			binding.create :sObject => contacto		      
 					
-		      haml :form_ayuda
+		      haml :red1
 		  end
 
 
@@ -89,7 +89,7 @@ require 'rforce'
 
      			binding.create :sObject => contacto		      
 					
-		      haml :form_amigo
+		      haml :red2
 		  end
 
   get '/paq_email' do
@@ -132,7 +132,7 @@ require 'rforce'
 
      			binding.create :sObject => contacto		      
 					
-		      haml :form_paq_email
+		      haml :red3
 		  end
 
 
@@ -176,7 +176,7 @@ require 'rforce'
 
      			binding.create :sObject => contacto		      
 					
-		      haml :form_paq_tel
+		      haml :red4
 		  end
 
 
@@ -220,7 +220,7 @@ require 'rforce'
 
      			binding.create :sObject => contacto		      
 					
-		      haml :form_contacto
+		      haml :red5
 		  end
 
 
