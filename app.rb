@@ -13,7 +13,7 @@ require 'rforce'
     
 	post '/ayuda' do
 		     # name = params[:name]
-		      name = params[:fname]
+		      fname = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
 		      menu_medio = params[:menu_medio]
@@ -24,10 +24,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.test.salesforce.com/services/Soap/u/20.0'
+     'https://test.salesforce.com/services/Soap/u/21.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1'
    
    
      			contacto = [
@@ -68,15 +68,15 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.test.salesforce.com/services/Soap/u/20.0'
+     'https://test.salesforce.com/services/Soap/u/21.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1'
    
    
      			contacto = [
                     :type,      'Contacto__c',
-                    :name,      "#{fname}",
+                    :fname,      "#{fname}",
                     :NombreCompleto__c,      "#{fname}",
                     :CorreoElectronico__c,      "#{email}",
                     :Telefono__c,      "#{phone}",
@@ -100,7 +100,7 @@ require 'rforce'
     
 	post '/paq_email' do
 		     # name = params[:name]
-		      name = params[:fname]
+		      fname = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
 		      cant_ninos = params[:cant_ninos]
@@ -111,10 +111,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.test.salesforce.com/services/Soap/u/20.0'
+     'https://test.salesforce.com/services/Soap/u/21.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1'
    
    
      			contacto = [
@@ -144,7 +144,7 @@ require 'rforce'
     
 	post '/paq_tel' do
 		     # name = params[:name]
-		      name = params[:fname]
+		      fname = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
 		      cant_ninos = params[:cant_ninos]
@@ -155,10 +155,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.test.salesforce.com/services/Soap/u/20.0'
+     'https://test.salesforce.com/services/Soap/u/21.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1'
    
    
      			contacto = [
@@ -188,7 +188,7 @@ require 'rforce'
     
 	post '/contacto' do
 		     # name = params[:name]
-		      name = params[:fname]
+		      fname = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
 		      menu_medio = params[:menu_medio]
@@ -199,10 +199,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://www.test.salesforce.com/services/Soap/u/20.0'
+     'https://test.salesforce.com/services/Soap/u/21.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1'
    
    
      			contacto = [
