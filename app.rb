@@ -24,10 +24,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/21.0'
+     'https://test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1rm9wxKVYdVaPQOZzCLlSJIgWK'
    
    
      			contacto = [
@@ -68,10 +68,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/21.0'
+     'https://test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1rm9wxKVYdVaPQOZzCLlSJIgWK'
    
    
      			contacto = [
@@ -111,10 +111,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/21.0'
+     'https://test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1rm9wxKVYdVaPQOZzCLlSJIgWK'
    
    
      			contacto = [
@@ -155,10 +155,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/21.0'
+     'https://test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1rm9wxKVYdVaPQOZzCLlSJIgWK'
    
    
      			contacto = [
@@ -199,10 +199,10 @@ require 'rforce'
 		         
 		      
 				  binding = RForce::Binding.new \
-     'https://test.salesforce.com/services/Soap/u/21.0'
+     'https://test.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'user', 'password'
+     'salesforce@destinostv.com.test', 'company1rm9wxKVYdVaPQOZzCLlSJIgWK'
    
    
      			contacto = [
