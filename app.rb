@@ -57,7 +57,7 @@ require 'rforce'
     
 	post '/amigo' do
 		     # name = params[:name]
-		      name = params[:fname]
+		      fname = params[:fname]
 		      email= params[:email]
 		      phone = params[:phone]
 		      pais = params[:pais]
