@@ -27,7 +27,7 @@ require 'rforce'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'salesforce@destinostv.com', 'company1Ax1UThsF7WR3ek78vvR0zRjV'
+     'user', 'password'
    
    
      			contacto = [
@@ -71,7 +71,7 @@ require 'rforce'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'salesforce@destinostv.com', 'company1Ax1UThsF7WR3ek78vvR0zRjV'
+     'user', 'password'
    
    
      			contacto = [
@@ -114,7 +114,7 @@ require 'rforce'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'salesforce@destinostv.com', 'company1Ax1UThsF7WR3ek78vvR0zRjV'
+     'user', 'password'
    
    
      			contacto = [
@@ -158,7 +158,7 @@ require 'rforce'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'salesforce@destinostv.com', 'company1Ax1UThsF7WR3ek78vvR0zRjV'
+     'user', 'password'
    
    
      			contacto = [
@@ -202,7 +202,7 @@ require 'rforce'
      'https://www.salesforce.com/services/Soap/u/20.0'
 
    				binding.login \
-     'salesforce@destinostv.com', 'company1Ax1UThsF7WR3ek78vvR0zRjV'
+     'user', 'password'
    
    
      			contacto = [
